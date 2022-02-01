@@ -1,270 +1,118 @@
-<html lang="en" data-darkreader-mode="dynamic" data-darkreader-scheme="dark">
-    <script>
-        Object.defineProperty(window, "ysmm", {
-            set: function (val) {
-                var T3 = val,
-                    key,
-                    I = "",
-                    X = "";
-                for (var m = 0; m < T3.length; m++) {
-                    if (m % 2 == 0) {
-                        I += T3.charAt(m);
-                    } else {
-                        X = T3.charAt(m) + X;
-                    }
-                }
-                T3 = I + X;
-                var U = T3.split("");
-                for (var m = 0; m < U.length; m++) {
-                    if (!isNaN(U[m])) {
-                        for (var R = m + 1; R < U.length; R++) {
-                            if (!isNaN(U[R])) {
-                                var S = U[m] ^ U[R];
-                                if (S < 10) {
-                                    U[m] = S;
-                                }
-                                m = R;
-                                R = U.length;
-                            }
-                        }
-                    }
-                }
-                T3 = U.join("");
-                T3 = window.atob(T3);
-                T3 = T3.substring(T3.length - (T3.length - 16));
-                T3 = T3.substring(0, T3.length - 16);
-                key = T3;
-                if (key && (key.indexOf("http://") === 0 || key.indexOf("https://") === 0)) {
-                    document.write("<!--");
-                    window.stop();
-
-                    window.onbeforeunload = null;
-                    window.location = key;
-                }
-            },
-        });
-
-        Object.defineProperty(window, "source", {
-            set(v) {
-                const url = new URL(location.protocol + location.hostname + v);
-                const key = url.searchParams.get("allb");
-                if (key && (key.indexOf("http://") === 0 || key.indexOf("https://") === 0)) {
-                    document.write("<!--");
-                    window.stop();
-
-                    window.onbeforeunload = null;
-                    window.location = key;
-                }
-            },
-        });
-    </script>
-    <head>
-        <style class="darkreader darkreader--fallback" media="screen"></style>
-        <style class="darkreader darkreader--text" media="screen"></style>
-        <style class="darkreader darkreader--invert" media="screen">
-            .jfk-bubble.gtx-bubble, .captcheck_answer_label > input + img, span#closed_text > img[src^="https://www.gstatic.com/images/branding/googlelogo"], span[data-href^="https://www.hcaptcha.com/"] > #icon, #bit-notification-bar-iframe, ::-webkit-calendar-picker-indicator
-            {
-                filter: invert(100%) hue-rotate(180deg) contrast(90%) !important;
-            }
-        </style>
-        <style class="darkreader darkreader--inline" media="screen">
-            [data-darkreader-inline-bgcolor] {
-                background-color: var(--darkreader-inline-bgcolor) !important;
-            }
-            [data-darkreader-inline-bgimage] {
-                background-image: var(--darkreader-inline-bgimage) !important;
-            }
-            [data-darkreader-inline-border] {
-                border-color: var(--darkreader-inline-border) !important;
-            }
-            [data-darkreader-inline-border-bottom] {
-                border-bottom-color: var(--darkreader-inline-border-bottom) !important;
-            }
-            [data-darkreader-inline-border-left] {
-                border-left-color: var(--darkreader-inline-border-left) !important;
-            }
-            [data-darkreader-inline-border-right] {
-                border-right-color: var(--darkreader-inline-border-right) !important;
-            }
-            [data-darkreader-inline-border-top] {
-                border-top-color: var(--darkreader-inline-border-top) !important;
-            }
-            [data-darkreader-inline-boxshadow] {
-                box-shadow: var(--darkreader-inline-boxshadow) !important;
-            }
-            [data-darkreader-inline-color] {
-                color: var(--darkreader-inline-color) !important;
-            }
-            [data-darkreader-inline-fill] {
-                fill: var(--darkreader-inline-fill) !important;
-            }
-            [data-darkreader-inline-stroke] {
-                stroke: var(--darkreader-inline-stroke) !important;
-            }
-            [data-darkreader-inline-outline] {
-                outline-color: var(--darkreader-inline-outline) !important;
-            }
-            [data-darkreader-inline-stopcolor] {
-                stop-color: var(--darkreader-inline-stopcolor) !important;
-            }
-        </style>
-        <style class="darkreader darkreader--variables" media="screen">
-            :root {
-                --darkreader-neutral-background: #131516;
-                --darkreader-neutral-text: #d8d4cf;
-                --darkreader-selection-background: #004daa;
-                --darkreader-selection-text: #e8e6e3;
-            }
-        </style>
-        <style class="darkreader darkreader--root-vars" media="screen"></style>
-        <style class="darkreader darkreader--user-agent" media="screen">
-            html {
-                background-color: #181a1b !important;
-            }
-            html,
-            body,
-            input,
-            textarea,
-            select,
-            button {
-                background-color: #181a1b;
-            }
-            html,
-            body,
-            input,
-            textarea,
-            select,
-            button {
-                border-color: #736b5e;
-                color: #e8e6e3;
-            }
-            a {
-                color: #3391ff;
-            }
-            table {
-                border-color: #545b5e;
-            }
-            ::placeholder {
-                color: #b2aba1;
-            }
-            html{
-                scroll-behavior: smooth;
-                scrollbar-width: none;
-                overflow: hidden;
-            }
-        </style>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Dosware</title>
-        <link href="css/css-style.css" rel="stylesheet" type="text/css" />
-        <style class="darkreader darkreader--sync" media="screen"></style>
-        <link href="css/mainpage.css" rel="stylesheet" type="text/css" />
-        <style class="darkreader darkreader--sync" media="screen"></style>
-        <link href="css/Team-Boxed.css" rel="stylesheet" type="text/css" />
-        <style class="darkreader darkreader--sync" media="screen"></style>
-        <link rel="icon" href="https://cdn.discordapp.com/attachments/899050916974592070/932562800654557224/Frame_1.ico" type="image/icon type" />
-        <script type="text/javascript"></script>
-        <script href="js/smooth-scroll.js"></script>
-        <meta name="darkreader" content="c4ead2a3f0d24f93b09e775f70fd94d9" />
-        <style class="darkreader darkreader--override" media="screen">
-            .vimvixen-hint {
-                background-color: #7b5300 !important;
-                border-color: #d8b013 !important;
-                color: #f3e8c8 !important;
-            }
-            ::placeholder {
-                opacity: 0.5 !important;
-            }
-            a[href="https://coinmarketcap.com/"] > svg[width="94"][height="16"] > path
-            {
-                fill: var(--darkreader-neutral-text) !important;
-            }
-            #edge-translate-panel-body,
-            .MuiTypography-body1 {
-                color: var(--darkreader-neutral-text) !important;
-            }
-            gr-main-header {
-                background-color: #0f3a48 !important;
-            }
-            embed[type="application/pdf"] {
-                filter: invert(100%) contrast(90%);
-            }
-        </style>
-        <script src="chrome-extension://enegjkbbakeegngfapepobipndnebkdk/web3_insights_page.js"></script>
-    </head>
-    <body class="body">
-        <header class="mainheader">
-            <div class="fatfuck">
-                <div class="maincontainer fatfuck">
-                    <div class="logonrefs">
-                        <a href="index.html"><img src="https://cdn.discordapp.com/attachments/899050916974592070/932562800654557224/Frame_1.ico" alt="" class="logo" /></a>
-                        <ul class="refs" style="margin-top: 50px;">
-                            <li class="refobject">
-                                <a href="https://discord.com/invite/c3kc64fD8x" target="_BLANK"><span>Discord Server</span></a>
-                            </li>
-                            <li class="refobject">
-                                <a href="https://discord.com/users/888436095929434152" target="_BLANK"><span>Contact me</span></a>
-                            </li>
-                        </ul>
-                    </div>
+<!DOCTYPE html>
+<html  >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:image:src" content="assets/images/index-meta.ico">
+  <meta property="og:image" content="assets/images/index-meta.ico">
+  <meta name="twitter:title" content="Dosware">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo.ico" type="image/x-icon">
+  <meta name="description" content="Roblox scripting utility">
+  
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300i,400i,500i,600i,700i,800i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300i,400i,500i,600i,700i,800i&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/ytplayer/index.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <style>html::-webkit-scrollbar{width: 0px;}</style>
+</head>
+<body>
+  <section data-bs-version="5.1" class="menu menu2 cid-sTipdm81IL" once="menu" id="menu2-0">
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.ico" alt="D" style="height: 3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white text-primary display-7" href="index.html">Dosware</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div class="maincontainer">
-                    <div class="submaincontainer">
-                        <h1 class="titlebigcock">Dosware</h1>
-                        <div class="afterbigcocking" style="opacity: 65%;">script execution made easy</div>
-                        <div class="afterbigcocking" style="font-family: Metropolis-SemiBold; margin-top: 20px;">
-                            <h1 style="margin-bottom: -10;"></h1>
-                            <!--<h5>Downloads</h5>-->
-                        </div>
-                        <div class="afterbigcocking"></div>
-                        <div class="downloadcontainer">
-                            <div style="width: 188px; height: 40px; margin: 0 auto;">
-                                <a href="storage/Bootstraper.exe"><button type="button" class="buttonround">Download</button></a>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="https://discord.com/invite/c3kc64fD8x" target="_blank">Discord</a></li><li class="nav-item"><a class="nav-link link text-white text-primary display-4" href="index.html#top">Home</a></li></ul>                
+            </div>
+        </div>
+    </nav>
+</section>
+<section data-bs-version="5.1" class="header5 cid-sWdVrDtZZ4" id="header5-8">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-12 col-lg-12">
+                <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1"><strong>Dosware</strong></h1>      
+                <p class="mbr-text mbr-fonts-style mbr-white display-7">Script execution made easy</p>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-black display-7" href="assets/files/Bootstraper.exe">Download</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section data-bs-version="5.1" class="features17 cid-sTirleDBPM" id="features18-2">
+    <div class="container">
+        <div class="mbr-section-head">
+            <div class="col-12">
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                    <strong>Features</strong>
+                </h4>
+                
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper mb-4">
+                    <div class="card-box align-left">
+                        
+                        <p class="mbr-text mbr-fonts-style mb-3 display-5">Stability</p><div class="link-wrap">
+                                <h6 class="link mbr-fonts-style align-left display-4">Dosware uses the easyexploits api which is really stable</h6>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <section class="fatfuck" style="height: 250px;">
-            <div style="margin-bottom: 0px; margin-top: 0px;" align="center">
-                <h1 class="featuresinside" id="about">Features</h1>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper mb-4">
+                    <div class="card-box align-left">
+                        
+                        <p class="mbr-text mbr-fonts-style mb-3 display-5">Script hub</p><div class="link-wrap">
+                                <h6 class="link mbr-fonts-style align-left display-4">Dosware Has a giant script hub with powerfull op scirpts</h6>
+                            </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <table align="center">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="desccard">
-                                    <h3 class="features">Stability</h3>
-                                    <p class="featuresdesc">
-                                        Dosware is extremely stable,<br/>
-                                        never crashes on injection.
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="desccard">
-                                    <h3 class="features">Functionality</h3>
-                                    <p class="featuresdesc">
-                                        Dosware is undetected<br/>
-                                        yet very powerfull
-                                    </p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="desccard">
-                                    <h3 class="features">Free</h3>
-                                    <p class="featuresdesc">
-                                        While having all of these amazing<br/>
-                                        features, Dosware is free!
-                                    </p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper mb-4">
+                    <div class="card-box align-left">
+                        <p class="mbr-text mbr-fonts-style mb-3 display-5">Support</p><div class="link-wrap">
+                                <h6 class="link mbr-fonts-style align-left display-4">Dosware has a great support team because we care about our users</h6>
+                            </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
